@@ -24,9 +24,9 @@ Passionate Fullstack Developer | Java Spring Boot | Angular | MERN Stack Enthusi
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 
-## 📈 GitHub Stats
+ <!--📈 GitHub Stats
 
-![Siddharth's GitHub Stats](https://github-readme-stats.vercel.app/api?username=YourGitHubUsername&show_icons=true&hide_title=true&hide_border=true&count_private=true&theme=dark)
+![Siddharth's GitHub Stats](https://github-readme-stats.vercel.app/api?username=YourGitHubUsername&show_icons=true&hide_title=true&hide_border=true&count_private=true&theme=dark) --->
 
 ## 📫 Let's Connect
 
