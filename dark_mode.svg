@@ -1,11 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="290" viewBox="0 0 920 290" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="370" viewBox="0 0 920 370" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
   <style>
     text { fill: #c9d1d9; }
     text, tspan { white-space: pre; }
     .dim { fill: #6e7681; }
     .accent { fill: #3fb950; }
-    .del { fill: #8b949e; }
+    .del { fill: #f85149; }
     .caret-static { fill: #3fb950; }
     @media (prefers-reduced-motion: reduce) {
       .anim { display: none; }
@@ -17,11 +17,15 @@
   <clipPath id="clip-2"><rect x="25" y="96" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="0.6s" dur="0.6s" fill="freeze"/></rect></clipPath>
   <clipPath id="clip-3"><rect x="25" y="118" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.3s" dur="0.7s" fill="freeze"/></rect></clipPath>
   <clipPath id="clip-4"><rect x="25" y="156" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="2.1s" dur="0.5s" fill="freeze"/></rect></clipPath>
-  <clipPath id="clip-5"><rect x="25" y="196" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.0s" dur="0.6s" fill="freeze"/></rect></clipPath>
-  <clipPath id="clip-6"><rect x="25" y="218" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.7s" dur="0.6s" fill="freeze"/></rect></clipPath>
-  <clipPath id="clip-7"><rect x="25" y="240" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.4s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stk-lang"><rect x="25" y="196" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.0s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stk-infra"><rect x="25" y="218" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.3s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stk-backend"><rect x="25" y="240" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.6s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stk-data"><rect x="25" y="262" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.9s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stk-observ"><rect x="25" y="284" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.2s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-stats"><rect x="25" y="316" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.7s" dur="0.6s" fill="freeze"/></rect></clipPath>
+  <clipPath id="clip-loc"><rect x="25" y="338" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="5.4s" dur="0.5s" fill="freeze"/></rect></clipPath>
 
-  <rect x="10" y="10" width="900" height="270" rx="10" ry="10" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+  <rect x="10" y="10" width="900" height="350" rx="10" ry="10" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
   <rect x="10" y="10" width="900" height="32" rx="10" ry="10" fill="#161b22"/>
   <rect x="10" y="30" width="900" height="12" fill="#161b22"/>
   <line x1="10" y1="42" x2="910" y2="42" stroke="#21262d" stroke-width="1"/>
@@ -49,17 +53,29 @@
     <animate class="anim" attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" begin="2.8s" repeatCount="indefinite"/>
   </rect>
 
-  <g clip-path="url(#clip-5)">
-    <text x="30" y="210"><tspan class="dim">stack</tspan><tspan x="110" class="accent">→</tspan><tspan> python  ·  java  ·  aws  ·  postgres  ·  docker  ·  terraform  ·  datadog</tspan></text>
+  <g clip-path="url(#clip-stk-lang)">
+    <text x="30" y="210"><tspan class="dim">stack</tspan><tspan x="110" class="accent">→</tspan><tspan x="130" class="dim">lang</tspan><tspan x="210">java · python · sql</tspan></text>
+  </g>
+  <g clip-path="url(#clip-stk-infra)">
+    <text x="30" y="232"><tspan x="110" class="accent">→</tspan><tspan x="130" class="dim">infra</tspan><tspan x="210">aws · terraform · docker · jenkins</tspan></text>
+  </g>
+  <g clip-path="url(#clip-stk-backend)">
+    <text x="30" y="254"><tspan x="110" class="accent">→</tspan><tspan x="130" class="dim">backend</tspan><tspan x="210">spring boot · rest · junit</tspan></text>
+  </g>
+  <g clip-path="url(#clip-stk-data)">
+    <text x="30" y="276"><tspan x="110" class="accent">→</tspan><tspan x="130" class="dim">data</tspan><tspan x="210">postgresql · dynamodb · aurora · mysql</tspan></text>
+  </g>
+  <g clip-path="url(#clip-stk-observ)">
+    <text x="30" y="298"><tspan x="110" class="accent">→</tspan><tspan x="130" class="dim">observ</tspan><tspan x="210">datadog · grafana · k6</tspan></text>
   </g>
 
-  <g clip-path="url(#clip-6)">
-    <text id="stats_pending" x="30" y="232" display="none"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
-    <text id="stats_live" x="30" y="232"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan> repos </tspan><tspan id="repo_data">23</tspan><tspan class="dim">  ·  </tspan><tspan>contributed </tspan><tspan id="contrib_data">23</tspan><tspan class="dim">  ·  </tspan><tspan>stars </tspan><tspan id="star_data">6</tspan><tspan class="dim">  ·  </tspan><tspan>followers </tspan><tspan id="follower_data">10</tspan><tspan class="dim">  ·  </tspan><tspan>commits </tspan><tspan id="commit_data">148</tspan></text>
+  <g clip-path="url(#clip-stats)">
+    <text id="stats_pending" x="30" y="330"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
+    <text id="stats_live" x="30" y="330" display="none"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan> repos </tspan><tspan id="repo_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>contributed </tspan><tspan id="contrib_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>stars </tspan><tspan id="star_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>followers </tspan><tspan id="follower_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>commits </tspan><tspan id="commit_data">0</tspan></text>
   </g>
 
-  <g clip-path="url(#clip-7)">
-    <text id="loc_pending" x="30" y="254" display="none"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
-    <text id="loc_live" x="30" y="254"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan> </tspan><tspan class="accent">+</tspan><tspan id="loc_add">143,094</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del">112,827</tspan><tspan class="dim">  ·  </tspan><tspan>net </tspan><tspan id="loc_data">30,267</tspan></text>
+  <g clip-path="url(#clip-loc)">
+    <text id="loc_pending" x="30" y="352"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
+    <text id="loc_live" x="30" y="352" display="none"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan> </tspan><tspan class="accent">+</tspan><tspan id="loc_add" class="accent">0</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">0</tspan><tspan class="dim">  ·  </tspan><tspan>net </tspan><tspan id="loc_data">0</tspan></text>
   </g>
 </svg>

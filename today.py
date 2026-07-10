@@ -8,8 +8,20 @@ from lxml import etree
 # Fine-grained personal access token with All Repositories access:
 # Account permissions: read:Followers, read:Starring, read:Watching
 # Repository permissions: read:Commit statuses, read:Contents, read:Metadata
-HEADERS = {'authorization': 'token ' + os.environ['ACCESS_TOKEN']}
-USER_NAME = os.environ['USER_NAME']
+_ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN', '').strip()
+_USER_NAME = os.environ.get('USER_NAME', '').strip()
+if not _ACCESS_TOKEN:
+    sys.stderr.write(
+        'ACCESS_TOKEN is empty or unset. In GitHub, check:\n'
+        '  Settings → Secrets and variables → Actions → Repository secrets\n'
+        '  ensure a secret named ACCESS_TOKEN exists with a valid PAT.\n'
+    )
+    sys.exit(1)
+if not _USER_NAME:
+    sys.stderr.write('USER_NAME secret is empty or unset (expected: your GitHub login).\n')
+    sys.exit(1)
+HEADERS = {'authorization': 'token ' + _ACCESS_TOKEN}
+USER_NAME = _USER_NAME
 QUERY_COUNT = {
     'user_getter': 0,
     'follower_getter': 0,
@@ -77,6 +89,14 @@ def post_graphql(query, variables):
                 break
             _sleep_backoff(attempt, r)
             continue
+
+        if r.status_code == 401:
+            raise Exception(
+                'HTTP 401 Bad credentials. The ACCESS_TOKEN secret is invalid, '
+                'expired, revoked, or missing required scopes. Regenerate a PAT '
+                'with the permissions listed at the top of today.py and update '
+                'the ACCESS_TOKEN repository secret.'
+            )
 
         raise Exception(f'HTTP {r.status_code}: {r.text[:500]}')
 
