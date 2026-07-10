@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="400" viewBox="0 0 920 400" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="576" viewBox="0 0 920 576" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
   <style>
     text { fill: #c9d1d9; }
     text, tspan { white-space: pre; }
@@ -15,23 +15,27 @@
 
   <clipPath id="c-cmd1"><rect x="25" y="58" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="0.0s" dur="0.5s" fill="freeze"/></rect></clipPath>
   <clipPath id="c-out1a"><rect x="25" y="80" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.5s" dur="0.5s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-out1b"><rect x="25" y="102" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.9s" dur="0.5s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-cmd2"><rect x="25" y="134" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="2.4s" dur="0.5s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-sk1"><rect x="25" y="156" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.9s" dur="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-sk2"><rect x="25" y="178" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.1s" dur="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-sk3"><rect x="25" y="200" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.3s" dur="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-sk4"><rect x="25" y="222" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.5s" dur="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-sk5"><rect x="25" y="244" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.7s" dur="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-cmd3"><rect x="25" y="276" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="5.2s" dur="0.6s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-stats"><rect x="25" y="298" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="6.8s" dur="0.5s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-loc"><rect x="25" y="320" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="7.3s" dur="0.4s" fill="freeze"/></rect></clipPath>
-  <clipPath id="c-final"><rect x="25" y="352" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="7.8s" dur="0.4s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-out1r"><rect x="25" y="102" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.7s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-out1b"><rect x="25" y="124" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.9s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-out1d"><rect x="25" y="168" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="2.1s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-out1e"><rect x="25" y="190" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="2.3s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-entity"><rect x="25" y="90" width="880" height="90"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="1.5s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-cmd2"><rect x="25" y="222" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="2.4s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-sk1"><rect x="25" y="244" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="3.9s" dur="0.3s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-sk2"><rect x="25" y="266" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.1s" dur="0.3s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-sk3"><rect x="25" y="288" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.3s" dur="0.3s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-sk4"><rect x="25" y="310" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.5s" dur="0.3s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-sk5"><rect x="25" y="332" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="4.7s" dur="0.3s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-cmd3"><rect x="25" y="364" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="5.2s" dur="0.6s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-stats"><rect x="25" y="386" width="880" height="110"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="6.8s" dur="0.5s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-loc"><rect x="25" y="498" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="7.3s" dur="0.4s" fill="freeze"/></rect></clipPath>
+  <clipPath id="c-final"><rect x="25" y="528" width="880" height="20"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="880" begin="7.8s" dur="0.4s" fill="freeze"/></rect></clipPath>
 
   <clipPath id="l1-fill"><rect x="62" y="82" width="0" height="18"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="84" begin="0.6s" dur="0.8s" fill="freeze"/></rect></clipPath>
-  <clipPath id="l2-fill"><rect x="62" y="158" width="0" height="18"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="84" begin="3.0s" dur="0.8s" fill="freeze"/></rect></clipPath>
-  <clipPath id="l3-fill"><rect x="62" y="300" width="0" height="18"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="84" begin="5.9s" dur="0.8s" fill="freeze"/></rect></clipPath>
+  <clipPath id="l2-fill"><rect x="62" y="246" width="0" height="18"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="84" begin="3.0s" dur="0.8s" fill="freeze"/></rect></clipPath>
+  <clipPath id="l3-fill"><rect x="62" y="388" width="0" height="18"><set class="anim" attributeName="width" to="0" begin="0s"/><animate class="anim" attributeName="width" from="0" to="84" begin="5.9s" dur="0.8s" fill="freeze"/></rect></clipPath>
 
-  <rect x="10" y="10" width="900" height="380" rx="10" ry="10" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
+  <rect x="10" y="10" width="900" height="556" rx="10" ry="10" fill="#0d1117" stroke="#21262d" stroke-width="1"/>
   <rect x="10" y="10" width="900" height="32" rx="10" ry="10" fill="#161b22"/>
   <rect x="10" y="30" width="900" height="12" fill="#161b22"/>
   <line x1="10" y1="42" x2="910" y2="42" stroke="#21262d" stroke-width="1"/>
@@ -49,64 +53,87 @@
     <text class="accent" x="62" y="94" clip-path="url(#l1-fill)">##########</text>
   </g>
 
+  <g clip-path="url(#c-entity)">
+    <text x="46" y="105" class="dim" xml:space="preserve">▛▀▀▀▜</text>
+    <text x="46" y="127" xml:space="preserve"><tspan class="dim">▌</tspan><tspan class="del">x x</tspan><tspan class="dim">▐</tspan><animate class="anim" attributeName="opacity" values="1;1;0;0;1;1" keyTimes="0;0.88;0.88;0.99;0.99;1" dur="3.4s" begin="2s" repeatCount="indefinite"/></text>
+    <text x="46" y="127" xml:space="preserve" opacity="0"><tspan class="dim">▌</tspan><tspan class="del">o o</tspan><tspan class="dim">▐</tspan><animate class="anim" attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.88;0.88;0.99;0.99;1" dur="3.4s" begin="2s" repeatCount="indefinite"/></text>
+    <text x="46" y="149" class="dim" xml:space="preserve">▙▄▄▄▟</text>
+    <text x="46" y="171" class="dim" xml:space="preserve"> ╲▒╱</text>
+  </g>
+
   <g clip-path="url(#c-out1a)">
-    <text x="30" y="94"><tspan>  siddharth ajith </tspan><tspan class="dim">— infra &amp; distributed systems engineer</tspan></text>
+    <text x="110" y="94">siddharth ajith</text>
+  </g>
+  <g clip-path="url(#c-out1r)">
+    <text x="110" y="116" class="dim">────────────────────</text>
   </g>
   <g clip-path="url(#c-out1b)">
-    <text x="30" y="116"><tspan class="dim">  builds the layer you only notice when it's gone · bengaluru, in</tspan></text>
+    <text x="110" y="138" class="dim">infra &amp; distributed systems engineer</text>
+  </g>
+  <g clip-path="url(#c-out1d)">
+    <text x="110" y="182" class="dim">› builds the layer you only notice when it's gone</text>
+  </g>
+  <g clip-path="url(#c-out1e)">
+    <text x="110" y="204" class="dim">› bengaluru, in · ap-south-1</text>
   </g>
 
   <g clip-path="url(#c-cmd2)">
-    <text x="30" y="148"><tspan class="dim">siddddd17@system ~/profile %</tspan><tspan> cat stack.txt</tspan></text>
+    <text x="30" y="236"><tspan class="dim">siddddd17@system ~/profile %</tspan><tspan> cat stack.txt</tspan></text>
   </g>
 
   <g class="anim" opacity="0">
     <set attributeName="opacity" to="1" begin="3.0s"/>
     <set attributeName="opacity" to="0" begin="3.9s"/>
-    <text class="dim" x="46" y="170"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">loading modules...</tspan></text>
-    <text class="accent" x="62" y="170" clip-path="url(#l2-fill)">##########</text>
+    <text class="dim" x="46" y="258"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">loading modules...</tspan></text>
+    <text class="accent" x="62" y="258" clip-path="url(#l2-fill)">##########</text>
   </g>
 
   <g clip-path="url(#c-sk1)">
-    <text x="30" y="170"><tspan x="46" class="dim">lang</tspan><tspan x="140">java · python · sql</tspan></text>
+    <text x="30" y="258"><tspan x="46" class="dim">lang</tspan><tspan x="176">java · python · sql</tspan></text>
   </g>
   <g clip-path="url(#c-sk2)">
-    <text x="30" y="192"><tspan x="46" class="dim">infra</tspan><tspan x="140">aws · terraform · docker · jenkins</tspan></text>
+    <text x="30" y="280"><tspan x="46" class="dim">infra</tspan><tspan x="176">aws · terraform · docker · jenkins</tspan></text>
   </g>
   <g clip-path="url(#c-sk3)">
-    <text x="30" y="214"><tspan x="46" class="dim">backend</tspan><tspan x="140">spring boot · rest · junit</tspan></text>
+    <text x="30" y="302"><tspan x="46" class="dim">backend</tspan><tspan x="176">spring boot · rest · junit</tspan></text>
   </g>
   <g clip-path="url(#c-sk4)">
-    <text x="30" y="236"><tspan x="46" class="dim">data</tspan><tspan x="140">postgresql · dynamodb · aurora · mysql</tspan></text>
+    <text x="30" y="324"><tspan x="46" class="dim">data</tspan><tspan x="176">postgresql · dynamodb · aurora · mysql</tspan></text>
   </g>
   <g clip-path="url(#c-sk5)">
-    <text x="30" y="258"><tspan x="46" class="dim">observ</tspan><tspan x="140">datadog · grafana · k6</tspan></text>
+    <text x="30" y="346"><tspan x="46" class="dim">observ</tspan><tspan x="176">datadog · grafana · k6</tspan></text>
   </g>
 
   <g clip-path="url(#c-cmd3)">
-    <text x="30" y="290"><tspan class="dim">siddddd17@system ~/profile %</tspan><tspan> gh stats --live</tspan></text>
+    <text x="30" y="378"><tspan class="dim">siddddd17@system ~/profile %</tspan><tspan> gh stats --live</tspan></text>
   </g>
 
   <g class="anim" opacity="0">
     <set attributeName="opacity" to="1" begin="5.9s"/>
     <set attributeName="opacity" to="0" begin="6.8s"/>
-    <text class="dim" x="46" y="312"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">fetching from api...</tspan></text>
-    <text class="accent" x="62" y="312" clip-path="url(#l3-fill)">##########</text>
+    <text class="dim" x="46" y="400"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">fetching from api...</tspan></text>
+    <text class="accent" x="62" y="400" clip-path="url(#l3-fill)">##########</text>
   </g>
 
   <g clip-path="url(#c-stats)">
-    <text id="stats_pending" x="30" y="312" display="none"><tspan>  </tspan><tspan class="dim">[syncing stats...]</tspan></text>
-    <text id="stats_live" x="30" y="312"><tspan>  repos </tspan><tspan id="repo_data">23</tspan><tspan class="dim"> · </tspan><tspan>contributed </tspan><tspan id="contrib_data">23</tspan><tspan class="dim"> · </tspan><tspan>stars </tspan><tspan id="star_data">6</tspan><tspan class="dim"> · </tspan><tspan>followers </tspan><tspan id="follower_data">10</tspan><tspan class="dim"> · </tspan><tspan>commits </tspan><tspan id="commit_data">151</tspan></text>
+    <text id="stats_pending" x="30" y="400" display="none"><tspan>  </tspan><tspan class="dim">[syncing stats...]</tspan></text>
+    <g id="stats_live">
+      <text x="30" y="400"><tspan x="46" class="dim">repos</tspan><tspan x="176" id="repo_data">23</tspan></text>
+      <text x="30" y="422"><tspan x="46" class="dim">contributed</tspan><tspan x="176" id="contrib_data">23</tspan></text>
+      <text x="30" y="444"><tspan x="46" class="dim">stars</tspan><tspan x="176" id="star_data">6</tspan></text>
+      <text x="30" y="466"><tspan x="46" class="dim">followers</tspan><tspan x="176" id="follower_data">10</tspan></text>
+      <text x="30" y="488"><tspan x="46" class="dim">commits</tspan><tspan x="176" id="commit_data">151</tspan></text>
+    </g>
   </g>
   <g clip-path="url(#c-loc)">
-    <text id="loc_pending" x="30" y="334" display="none"><tspan>  </tspan><tspan class="dim">[syncing loc...]</tspan></text>
-    <text id="loc_live" x="30" y="334"><tspan>  loc  </tspan><tspan class="accent">+</tspan><tspan id="loc_add" class="accent">143,334</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">112,951</tspan><tspan class="dim"> · </tspan><tspan>net </tspan><tspan id="loc_data">30,383</tspan></text>
+    <text id="loc_pending" x="30" y="510" display="none"><tspan>  </tspan><tspan class="dim">[syncing loc...]</tspan></text>
+    <text id="loc_live" x="30" y="510"><tspan x="46" class="dim">loc</tspan><tspan x="176" class="accent">+</tspan><tspan id="loc_add" class="accent">143,334</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">112,951</tspan><tspan class="dim"> · </tspan><tspan>net </tspan><tspan id="loc_data">30,383</tspan></text>
   </g>
 
   <g clip-path="url(#c-final)">
-    <text x="30" y="366"><tspan class="dim">siddddd17@system ~/profile %</tspan></text>
+    <text x="30" y="542"><tspan class="dim">siddddd17@system ~/profile %</tspan></text>
   </g>
-  <rect class="caret-static" x="266" y="352" width="9" height="16" opacity="0">
+  <rect class="caret-static" x="266" y="528" width="9" height="16" opacity="0">
     <set class="anim" attributeName="opacity" to="1" begin="8.2s"/>
     <animate class="anim" attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" begin="8.3s" repeatCount="indefinite"/>
   </rect>
