@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="370" viewBox="0 0 920 370" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="14">
   <style>
     text { fill: #1f2328; }
@@ -70,12 +70,12 @@
   </g>
 
   <g clip-path="url(#clip-stats)">
-    <text id="stats_pending" x="30" y="330"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
-    <text id="stats_live" x="30" y="330" display="none"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan> repos </tspan><tspan id="repo_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>contributed </tspan><tspan id="contrib_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>stars </tspan><tspan id="star_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>followers </tspan><tspan id="follower_data">0</tspan><tspan class="dim">  ·  </tspan><tspan>commits </tspan><tspan id="commit_data">0</tspan></text>
+    <text id="stats_pending" x="30" y="330" display="none"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
+    <text id="stats_live" x="30" y="330"><tspan class="dim">stats</tspan><tspan x="110" class="accent">→</tspan><tspan> repos </tspan><tspan id="repo_data">23</tspan><tspan class="dim">  ·  </tspan><tspan>contributed </tspan><tspan id="contrib_data">23</tspan><tspan class="dim">  ·  </tspan><tspan>stars </tspan><tspan id="star_data">6</tspan><tspan class="dim">  ·  </tspan><tspan>followers </tspan><tspan id="follower_data">10</tspan><tspan class="dim">  ·  </tspan><tspan>commits </tspan><tspan id="commit_data">149</tspan></text>
   </g>
 
   <g clip-path="url(#clip-loc)">
-    <text id="loc_pending" x="30" y="352"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
-    <text id="loc_live" x="30" y="352" display="none"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan> </tspan><tspan class="accent">+</tspan><tspan id="loc_add" class="accent">0</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">0</tspan><tspan class="dim">  ·  </tspan><tspan>net </tspan><tspan id="loc_data">0</tspan></text>
+    <text id="loc_pending" x="30" y="352" display="none"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan class="dim"> [syncing]</tspan></text>
+    <text id="loc_live" x="30" y="352"><tspan class="dim">loc</tspan><tspan x="110" class="accent">→</tspan><tspan> </tspan><tspan class="accent">+</tspan><tspan id="loc_add" class="accent">143,180</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">112,861</tspan><tspan class="dim">  ·  </tspan><tspan>net </tspan><tspan id="loc_data">30,319</tspan></text>
   </g>
 </svg>
