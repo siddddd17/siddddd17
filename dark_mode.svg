@@ -122,12 +122,12 @@
       <text x="30" y="422"><tspan x="46" class="dim">contributed</tspan><tspan x="176" id="contrib_data">23</tspan></text>
       <text x="30" y="444"><tspan x="46" class="dim">stars</tspan><tspan x="176" id="star_data">6</tspan></text>
       <text x="30" y="466"><tspan x="46" class="dim">followers</tspan><tspan x="176" id="follower_data">10</tspan></text>
-      <text x="30" y="488"><tspan x="46" class="dim">commits</tspan><tspan x="176" id="commit_data">151</tspan></text>
+      <text x="30" y="488"><tspan x="46" class="dim">commits</tspan><tspan x="176" id="commit_data">152</tspan></text>
     </g>
   </g>
   <g clip-path="url(#c-loc)">
     <text id="loc_pending" x="30" y="510" display="none"><tspan>  </tspan><tspan class="dim">[syncing loc...]</tspan></text>
-    <text id="loc_live" x="30" y="510"><tspan x="46" class="dim">loc</tspan><tspan x="176" class="accent">+</tspan><tspan id="loc_add" class="accent">143,334</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">112,951</tspan><tspan class="dim"> · </tspan><tspan>net </tspan><tspan id="loc_data">30,383</tspan></text>
+    <text id="loc_live" x="30" y="510"><tspan x="46" class="dim">loc</tspan><tspan x="176" class="accent">+</tspan><tspan id="loc_add" class="accent">143,458</tspan><tspan class="dim"> / </tspan><tspan class="del">-</tspan><tspan id="loc_del" class="del">113,021</tspan><tspan class="dim"> · </tspan><tspan>net </tspan><tspan id="loc_data">30,437</tspan></text>
   </g>
 
   <g clip-path="url(#c-final)">
