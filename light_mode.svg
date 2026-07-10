@@ -46,7 +46,7 @@
     <set attributeName="opacity" to="1" begin="0.6s"/>
     <set attributeName="opacity" to="0" begin="1.5s"/>
     <text class="dim" x="46" y="94"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">resolving identity...</tspan></text>
-    <text class="dim" x="62" y="94" clip-path="url(#l1-fill)">##########</text>
+    <text class="accent" x="62" y="94" clip-path="url(#l1-fill)">##########</text>
   </g>
 
   <g clip-path="url(#c-out1a)">
@@ -64,7 +64,7 @@
     <set attributeName="opacity" to="1" begin="3.0s"/>
     <set attributeName="opacity" to="0" begin="3.9s"/>
     <text class="dim" x="46" y="170"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">loading modules...</tspan></text>
-    <text class="dim" x="62" y="170" clip-path="url(#l2-fill)">##########</text>
+    <text class="accent" x="62" y="170" clip-path="url(#l2-fill)">##########</text>
   </g>
 
   <g clip-path="url(#c-sk1)">
@@ -91,7 +91,7 @@
     <set attributeName="opacity" to="1" begin="5.9s"/>
     <set attributeName="opacity" to="0" begin="6.8s"/>
     <text class="dim" x="46" y="312"><tspan>[</tspan><tspan x="156">]</tspan><tspan x="172">fetching from api...</tspan></text>
-    <text class="dim" x="62" y="312" clip-path="url(#l3-fill)">##########</text>
+    <text class="accent" x="62" y="312" clip-path="url(#l3-fill)">##########</text>
   </g>
 
   <g clip-path="url(#c-stats)">
