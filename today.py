@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import hashlib
 import requests
@@ -18,16 +19,72 @@ QUERY_COUNT = {
     'loc_query': 0,
 }
 
+GRAPHQL_URL = 'https://api.github.com/graphql'
+REQUEST_TIMEOUT = 30
+MAX_ATTEMPTS = 5
+BACKOFF_CAP = 30
+
+
+def _looks_like_rate_limit(response):
+    if response.status_code == 429:
+        return True
+    if response.status_code == 403:
+        body = (response.text or '').lower()
+        if 'rate limit' in body or 'abuse' in body:
+            return True
+    return False
+
+
+def _sleep_backoff(attempt, response=None):
+    delay = min(BACKOFF_CAP, 2 ** attempt)
+    if response is not None:
+        retry_after = response.headers.get('Retry-After')
+        if retry_after:
+            try:
+                delay = max(delay, int(retry_after))
+            except ValueError:
+                pass
+    delay = min(delay, BACKOFF_CAP)
+    print(f'  retrying in {delay}s (attempt {attempt})', file=sys.stderr)
+    time.sleep(delay)
+
+
+def post_graphql(query, variables):
+    last_error = None
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        try:
+            r = requests.post(
+                GRAPHQL_URL,
+                json={'query': query, 'variables': variables},
+                headers=HEADERS,
+                timeout=REQUEST_TIMEOUT,
+            )
+        except (requests.ConnectionError, requests.Timeout) as e:
+            last_error = e
+            print(f'  network error: {e}', file=sys.stderr)
+            if attempt == MAX_ATTEMPTS:
+                break
+            _sleep_backoff(attempt)
+            continue
+
+        if r.status_code == 200:
+            return r
+
+        if r.status_code >= 500 or _looks_like_rate_limit(r):
+            last_error = Exception(f'HTTP {r.status_code}: {r.text[:200]}')
+            print(f'  transient HTTP {r.status_code}', file=sys.stderr)
+            if attempt == MAX_ATTEMPTS:
+                break
+            _sleep_backoff(attempt, r)
+            continue
+
+        raise Exception(f'HTTP {r.status_code}: {r.text[:500]}')
+
+    raise Exception(f'giving up after {MAX_ATTEMPTS} attempts: {last_error}')
+
 
 def simple_request(func_name, query, variables):
-    request = requests.post(
-        'https://api.github.com/graphql',
-        json={'query': query, 'variables': variables},
-        headers=HEADERS,
-    )
-    if request.status_code == 200:
-        return request
-    raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
+    return post_graphql(query, variables)
 
 
 def graph_commits(start_date, end_date):
@@ -114,24 +171,19 @@ def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, delet
         }
     }'''
     variables = {'repo_name': repo_name, 'owner': owner, 'cursor': cursor}
-    request = requests.post(
-        'https://api.github.com/graphql',
-        json={'query': query, 'variables': variables},
-        headers=HEADERS,
-    )
-    if request.status_code == 200:
-        if request.json()['data']['repository']['defaultBranchRef'] is not None:
-            return loc_counter_one_repo(
-                owner, repo_name, data, cache_comment,
-                request.json()['data']['repository']['defaultBranchRef']['target']['history'],
-                addition_total, deletion_total, my_commits,
-            )
-        else:
-            return 0
-    force_close_file(data, cache_comment)
-    if request.status_code == 403:
-        raise Exception('Too many requests in a short amount of time. Anti-abuse limit hit.')
-    raise Exception('recursive_loc() has failed with a', request.status_code, request.text, QUERY_COUNT)
+    try:
+        request = post_graphql(query, variables)
+    except Exception:
+        force_close_file(data, cache_comment)
+        raise
+    payload = request.json()['data']['repository']
+    if payload['defaultBranchRef'] is not None:
+        return loc_counter_one_repo(
+            owner, repo_name, data, cache_comment,
+            payload['defaultBranchRef']['target']['history'],
+            addition_total, deletion_total, my_commits,
+        )
+    return 0
 
 
 def loc_counter_one_repo(owner, repo_name, data, cache_comment, history, addition_total, deletion_total, my_commits):
@@ -295,6 +347,41 @@ def reveal_live(root, pending_id, live_id):
         del live.attrib['display']
 
 
+STAT_IDS = ('commit_data', 'star_data', 'repo_data', 'contrib_data',
+            'follower_data', 'loc_data', 'loc_add', 'loc_del')
+
+
+def read_snapshot(filename):
+    if not os.path.exists(filename):
+        return None
+    try:
+        tree = etree.parse(filename)
+        root = tree.getroot()
+    except etree.XMLSyntaxError:
+        return None
+    pending = root.find(".//*[@id='stats_pending']")
+    synced = pending is not None and pending.get('display') == 'none'
+    values = tuple(
+        (root.find(f".//*[@id='{i}']").text if root.find(f".//*[@id='{i}']") is not None else None)
+        for i in STAT_IDS
+    )
+    return (synced,) + values
+
+
+def build_snapshot(commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+    return (
+        True,
+        f"{commit_data:,}",
+        f"{star_data:,}",
+        f"{repo_data:,}",
+        f"{contrib_data:,}",
+        f"{follower_data:,}",
+        str(loc_data[2]),
+        str(loc_data[0]),
+        str(loc_data[1]),
+    )
+
+
 def commit_counter(comment_size):
     total_commits = 0
     filename = 'cache/' + hashlib.sha256(USER_NAME.encode('utf-8')).hexdigest() + '.txt'
@@ -353,25 +440,36 @@ def formatter(query_type, difference):
 
 
 if __name__ == '__main__':
-    print('Calculation times:')
-    user_data, user_time = perf_counter(user_getter, USER_NAME)
-    OWNER_ID, _acc_date = user_data
-    formatter('account data', user_time)
-    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
-    formatter('LOC (cached)' if total_loc[-1] else 'LOC (no cache)', loc_time)
-    commit_data, commit_time = perf_counter(commit_counter, 7)
-    formatter('commit counter', commit_time)
-    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
-    formatter('star counter', star_time)
-    repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
-    formatter('repo counter', repo_time)
-    contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
-    formatter('contrib counter', contrib_time)
-    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
-    formatter('follower counter', follower_time)
+    try:
+        print('Calculation times:')
+        user_data, user_time = perf_counter(user_getter, USER_NAME)
+        OWNER_ID, _acc_date = user_data
+        formatter('account data', user_time)
+        total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
+        formatter('LOC (cached)' if total_loc[-1] else 'LOC (no cache)', loc_time)
+        commit_data, commit_time = perf_counter(commit_counter, 7)
+        formatter('commit counter', commit_time)
+        star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
+        formatter('star counter', star_time)
+        repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
+        formatter('repo counter', repo_time)
+        contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
+        formatter('contrib counter', contrib_time)
+        follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+        formatter('follower counter', follower_time)
 
-    for index in range(len(total_loc) - 1):
-        total_loc[index] = '{:,}'.format(total_loc[index])
+        for index in range(len(total_loc) - 1):
+            total_loc[index] = '{:,}'.format(total_loc[index])
+    except Exception as exc:
+        print(f'\nfetch failed: {exc}', file=sys.stderr)
+        print('exiting without writing SVGs — leaving last good state intact', file=sys.stderr)
+        sys.exit(1)
+
+    new_snapshot = build_snapshot(commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
+    unchanged = all(read_snapshot(f) == new_snapshot for f in ('dark_mode.svg', 'light_mode.svg'))
+    if unchanged:
+        print('\nno-op: stats unchanged; skipping SVG rewrite')
+        sys.exit(0)
 
     svg_overwrite('dark_mode.svg', commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
     svg_overwrite('light_mode.svg', commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])

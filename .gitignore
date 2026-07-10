@@ -17,3 +17,4 @@ Thumbs.db
 
 # local preview scaffold — not shipped
 preview.html
+*.populated.svg
