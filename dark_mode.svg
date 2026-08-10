@@ -121,7 +121,7 @@
       <text x="30" y="400"><tspan x="46" class="dim">repos</tspan><tspan x="176" id="repo_data">24</tspan></text>
       <text x="30" y="422"><tspan x="46" class="dim">contributed</tspan><tspan x="176" id="contrib_data">24</tspan></text>
       <text x="30" y="444"><tspan x="46" class="dim">stars</tspan><tspan x="176" id="star_data">6</tspan></text>
-      <text x="30" y="466"><tspan x="46" class="dim">followers</tspan><tspan x="176" id="follower_data">10</tspan></text>
+      <text x="30" y="466"><tspan x="46" class="dim">followers</tspan><tspan x="176" id="follower_data">11</tspan></text>
       <text x="30" y="488"><tspan x="46" class="dim">commits</tspan><tspan x="176" id="commit_data">154</tspan></text>
     </g>
   </g>
