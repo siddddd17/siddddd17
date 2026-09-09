@@ -331,8 +331,11 @@ def force_close_file(data, cache_comment):
 
 def stars_counter(data):
     total_stars = 0
-    for node in data:
-        total_stars += node['node']['stargazers']['totalCount']
+    for edge in data:
+        node = edge.get('node') if edge else None
+        stargazers = node.get('stargazers') if node else None
+        if stargazers and stargazers.get('totalCount') is not None:
+            total_stars += stargazers['totalCount']
     return total_stars
 
 
